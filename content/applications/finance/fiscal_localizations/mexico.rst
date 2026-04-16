@@ -648,8 +648,42 @@ download the payment PDF from the :guilabel:`CFDI` tab on the invoice by clickin
 .. image:: mexico/mx-print-payment.png
    :alt: Example of the print button on the CFDI tab.
 
+.. _l10n/mx/factoring:
+
 Factoring
 *********
+
+To create a payment for financial factoring, create a payment directly from a bank journal by
+:doc:`adding a statement line <../accounting/payments>`, when adding a new payment instead of 
+setting the customer of the invoice as contact, set the financial insitution (factorant) that will
+purchase the debt and input the actual amount of money to be received by the factorant, after that
+select :guilabel:`Reconcile` and the regular reconciliation menu will open, here remove the partner
+filter and select the invoices that will be paid by the factorant and click on :guilabel:`Select &
+Distribute`
+
+.. image:: mexico/mx-factoring-distribution.png
+   :alt: Example of a distribution of 9000MXN to two invoices adding up to 10440MXN.
+
+On the distribution menu each line represents an invoice that will recieve a payment, the amount of
+the payment *must* be distributed on the selected invoices by filling the :guilabel:`Amount` field
+and register the compensation per line on the :guilabel:`Compensation` field and click on
+:guilabel:`Save`.
+
+Additionally the :guilabel:`To distribute` section at the botton keeps track of the amount pending
+and will turn the last line to red if the distributed amound exceeds the payment amount.
+
+To generate the XML file just open one of the paid invoices and click on :guilabel:`Update Payments`.
+
+.. note::
+   - It is possible to leave unpaid balance for financial aforum to invoice at a later date.
+   - The hidden field :guilabel:`Due (Company)` keeps the amount in company currency when dealing
+   with multi-currency factoring.
+
+.. warning::
+   - If there is no account set on the factoring section in settings the distribution button will
+   not be visible.
+   - It is not possible to create a factoring payment if the currency of the payment is different of
+   that of the bank journal.
 
 .. _l10n/mx/invoice-cancellations:
 
