@@ -514,6 +514,10 @@ be a relation between a credit note and an invoice through the fiscal folio.
 Because of this requirement, the field :guilabel:`CFDI Origin` adds this relation with a `01|`,
 followed by the fiscal folio of the original :abbr:`UUID (universally unique identifier)`.
 
+While creating credit notes the description of the lines needs to indicate what it is for, to do
+this just modify the line descrpition and explain in text what is being given as a bonus, discount,
+or refund.
+
 .. tip::
    For the :guilabel:`CFDI Origin` field to be automatically added, use the :guilabel:`Add Credit
    Note` button from the invoice, instead of creating it manually.
