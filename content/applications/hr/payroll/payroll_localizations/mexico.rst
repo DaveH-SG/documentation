@@ -47,6 +47,13 @@ localization:
        - l10n_mx_hr_payroll
        - l10n_mx_edi
      - Adds the required rules and parameters to manage local payroll calculations.
+   * - :guilabel:`Documents - Mexican Payroll`
+     - `documents_l10n_mx_hr_payroll_account_edi`
+     - - hr_payroll_account
+       - l10n_mx
+       - l10n_mx_hr_payroll
+       - l10n_mx_edi
+     - Attaches CFDI xml files alongside the PDF file on payslip emails.
 
 .. tip::
    Installing the :guilabel:`Mexico - Payroll CFDI` module automatically installs both the
