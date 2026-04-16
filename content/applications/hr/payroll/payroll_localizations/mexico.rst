@@ -53,7 +53,7 @@ localization:
        - l10n_mx
        - l10n_mx_hr_payroll
        - l10n_mx_edi
-     - Attaches CFDI xml files alongside the PDF file on payslip emails.
+     - Adds CFDI XML and PDF files as an attachment on payslip emails.
 
 .. tip::
    Installing the :guilabel:`Mexico - Payroll CFDI` module automatically installs both the
