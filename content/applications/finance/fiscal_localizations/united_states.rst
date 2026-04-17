@@ -33,26 +33,20 @@ workflows, and provide in-depth looks at some specific use cases, as well.
 Configuration
 =============
 
-Below are the available modules in Odoo for accounting use in the United States.
+The core module for the US fiscal localization is included in the default package installed during
+database initialization. Verify the US package is in use by navigating to :menuselection:`Accounting
+App --> Settings`. Under the :guilabel:`Fiscal Localization` section, the :guilabel:`Package` field
+should be set to `United States`. This package includes the necessary settings for the US
+localization for the Odoo **Accounting** app.
 
-.. note::
-   The modules listed below are either for reference only or are optional, as the core requirements
-   to operate under the US fiscal localization in Odoo are already included under the default
-   package that came installed during database initialization.
+.. image:: united_states/us-l10n-package.png
+   :alt: The Package field with the United States package selected.
 
-   Verify the default package is in use by navigating to :menuselection:`Accounting App -->
-   Settings` and under the :guilabel:`Fiscal Localization` section at the top, look for the `Generic
-   Chart Template` selection to be listed next to the :guilabel:`Package` field label. This chart
-   template includes the necessary settings for the US localization for the Odoo **Accounting** app.
+Optional modules
+----------------
 
-   .. image:: united_states/us-l10n-generic-chart-template.png
-      :alt: The Generic Chart Template comes preconfigured for the US localization.
-
-Modules installation
---------------------
-
-:ref:`Install <general/install>` the following modules to get all the features of the United States
-localization:
+The following modules may be :ref:`installed <general/install>` for additional functionality
+specific to the US fiscal localization:
 
 .. list-table::
    :header-rows: 1
@@ -272,9 +266,11 @@ localization, under the :menuselection:`Accounting app --> Reporting` drop-down 
 - :ref:`Balance Sheet <accounting/reporting/balance-sheet>`: a "snapshot" of a company's financial
   position at a specific point in time, which contains an overview of a company's assets,
   liabilities, and equity.
-- :ref:`Profit & Loss <accounting/reporting/balance-sheet>`: otherwise known as a *P&L statement* or
+- :ref:`Profit & Loss <l10n_us/profit-loss-statement>`: otherwise known as a *P&L statement* or
   *income statement*, provides a summary of a company's revenues, expenses, and profits/losses over
-  a given period of time.
+  a given period of time. To conform with |GAAP| standards and support migration from US accounting
+  software, labels are specific to the US localization. The structure and formula are identical to
+  the standard report.
 - :ref:`Cash Flow Statement <l10n_us/cash-flow-statement>`: shows how much cash and cash equivalents
   a company has received and spent in a given period.
 - :ref:`Executive Summary <accounting/reporting/executive-summary>`: an overview report that covers
@@ -387,6 +383,45 @@ Additionally, the cash flow statement in Odoo:
 
    .. image:: united_states/us-l10n-operating-expenses-example.png
       :alt: Example of a bill registered as an operating expense as part of a cash flow statement.
+
+.. _l10n_us/profit-loss-statement:
+
+Profit & loss statement
+-----------------------
+
+To view the profit and loss statement, enable Developer Mode and navigate to
+:menuselection:`Accounting app --> Reporting --> Profit and Loss`, then click the :icon:`fa-cogs`
+:guilabel:`(cogs)` smart button. The US profit and loss statement line items correlate with the
+standard profit and loss statement as follows:
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 0
+
+   * - Standard P&L Statement
+     - US P&L Statement
+   * - Revenue
+     - Income
+   * - Less Costs of Revenue
+     - Cost of Sales
+   * - Gross Profit
+     - Gross Profit
+   * - Less Operating Expenses
+     - Expense
+   * - Operating Income (or Loss)
+     - Net Operating Income
+   * - Plus Other Income
+     - Other Income
+   * - Less Other Expenses
+     - Other Expense
+   * -
+     - Net Other Income
+   * - Net Profit
+     - Net Income
+   * - Less Allocations and Plus Withdrawals
+     -
+   * - Net Profit Left After Allocations and Withdrawals
+     -
 
 .. _l10n_us/cash-discount:
 
